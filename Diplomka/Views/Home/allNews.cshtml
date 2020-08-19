@@ -1,0 +1,111 @@
+﻿@using WebSiteCkEditor.Models;
+
+@{
+    ViewBag.Title = "Барлық Жаңалықтар";
+
+}
+@model WebSiteCkEditor.Models.ClientModel
+
+<main>
+
+    <section class="hero">
+        <div class="container">
+            <div class="main-message">
+                <h1>Silkway-ге</h1>
+                <h3>Қош келдіңіз</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="all-news">
+        <div class="container">
+
+            <div class="title-heading">
+                <h1>Барлық Жаңалықтар</h1>
+            </div>
+
+            <div class="news-area">
+                @if (Model.lst_newsv != null)
+                {
+                    foreach (var item in Model.lst_newsv)
+                    {
+                        <div class="news-area-item">
+                            <div class="item-title">
+                                <h1>@item.Title</h1>
+                            </div>
+
+                            <div class="item-text">
+                                <p>
+                                    @item.Desc
+                                </p>
+                            </div>
+
+                            <div class="item-img">
+                                <img src="@item.PhotoUrl" alt="">
+                            </div>
+                            <br />
+                             <a href="/home/news/@item.Id" class="btn-news">Толығырақ...</a>
+                        </div>
+                    }
+                }
+
+                @*<div class="news-area-item">
+                    <div class="item-title">
+                        <h1>ASTANA HUB ХАЛЫҚАРАЛЫҚ IT ТЕХНОПАРКІ</h1>
+                    </div>
+
+                    <div class="item-text">
+                        <p>
+                            25 желтоқсан 2019 ж. күні Нұр-Сұлтан қаласында, Astana Hub халықаралық IT
+                            технопаркі және Silkway халықаралық университеті арасында екіжақты келісім-шартқа қол
+                            қойылып, алдағы уақытта атқарылатын жұмыстар туралы келісім жасалынды
+                        </p>
+                    </div>
+
+                    <div class="item-img">
+                        <img src="~/Scripts/1.0.0.0/images/As2.jpeg" alt="">
+                    </div>
+                </div>
+
+                <div class="news-area-item">
+                    <div class="item-title">
+                        <h1>Пәндік олимпиада</h1>
+                    </div>
+
+                    <div class="item-text">
+                        <p>
+                            SILKWAY халықаралық университетінің студенттері Ермахан Нұрдаулет, Исабек Аида Нұр-Сұлтан қаласында Л.Гумилев атындағы Евразия Ұлттық университетінде  өткен Қазақстан
+                            Республикасы жоғары оқу орындары арасындағы 5В011100-Информатика  мамандығы бойынша ХI Республикалық студенттердің пәндік
+                            олимпиадасында III орын иеленді. Жетекшісі оқытушы Баймешова Айдана Нұрғалиқызы
+                        </p>
+                    </div>
+
+                    <div class="item-img">
+                        <img src="~/Scripts/1.0.0.0/images/As3.jpeg" alt="">
+                    </div>
+                </div>
+
+                <div class="news-area-item">
+                    <div class="item-title">
+                        <h1>«SMART idea group» программисттері біздің ІТ центрде</h1>
+                    </div>
+
+                    <div class="item-text">
+                        <p>
+                            «SMART HUB SILKWAY» ІТ центрінде «SMART idea group» ІТ компаниясының программистері және оның жетекшісі Асылжан Жананов
+                            «Информатика және математика» кафедрасының студенттері мен семинар трейнинг өткізді. Бұл елімізде ІТ саласындағы ең ірі компаниялардың
+                            бірі болып есептеледі. Семинарда студенттерге компания жетекшісі өзінің бұл дәрежеге қалай жеткені және ІТ саласында келешекте қандай жұмыстарды орындау керектігі ж
+                            өнінде сұхбат құрды. Компания программисттері жақында іске қосылған мобильі приложения «Pillikan», оның қандай программалар көмегімен орындалғаны жайлы студенттермен пікір бөлісті.
+                        </p>
+                    </div>
+
+                    <div class="item-img">
+                        <img src="~/Scripts/1.0.0.0/images/as4.jpg" alt="">
+                    </div>
+                </div>*@
+
+            </div>
+        </div>
+    </section>
+
+</main>

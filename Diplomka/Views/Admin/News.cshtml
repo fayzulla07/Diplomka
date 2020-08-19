@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Новости";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+@model WebSiteCkEditor.Models.AdminNewModel
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container-fluid" style="padding:30px; background-color:white; border-radius:10px;">
+    <div class="container-fluid">
+        <h1 style="margin-bottom:30px;">Новости</h1>
+        <div class="panel panel-heading">
+            <a href="/admin/CkEditorNews/0" class="btn btn-outline-primary">Добавить</a>
+            <br />
+            <br />
+        </div>
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th style="width: 65%">Тема</th>
+                    <th style="width: 12%">Статус</th>
+                    <th style="width: 11%">Изменить</th>
+                    <th style="width: 12%">Удалить</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.lst_news != null)
+                {
+                    foreach (var item in Model.lst_news)
+                    {
+                <tr>
+                    <td>@item.Title</td>
+                    @if (item.IsShow)
+                    {
+                        <td><div style="color:blue;">Показано</div></td>
+                    }
+                    else
+                    {
+                        <td><div style="color:red;">Скрыто</div></td>
+                    }
+
+                    <td class="text-center">
+                        <a class="btn btn-primary" href="/admin/CkEditorNews/@item.Id">Изменить</a>
+                    </td>
+
+                    <td class="text-center">
+                        <form action="/Admin/DeleteNews" onsubmit="return confirm('вы уверены что хотите удалить?')" method="post">
+                            <button name="Id" value="@item.Id" class="btn btn-danger btn-sm">Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

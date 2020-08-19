@@ -1,0 +1,41 @@
+﻿@using WebSiteCkEditor.Models;
+@{
+    List<News> lst = new List<News>(Model.lst_newsv);
+}
+@model WebSiteCkEditor.Models.ClientModel
+<main>
+
+    <section class="hero">
+        <div class="container">
+            <div class="main-message">
+                <h1>Silkway-ге</h1>
+                <h3>Қош келдіңіз</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="all-news">
+        <div class="container">
+
+            <div class="news-area">
+                <div class="news-area-item">
+                    <div class="item-title">
+                        <h1>@lst.FirstOrDefault().Title</h1>
+                    </div>
+
+                    <div class="item-text">
+                        <p>
+                            @Html.Raw(lst.FirstOrDefault().Content)
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+

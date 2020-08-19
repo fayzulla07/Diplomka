@@ -1,0 +1,83 @@
+﻿@using WebSiteCkEditor.Models;
+@{
+    string[] mas = { "star-gazing","hiking", "camping", "ending" };
+    int i = 0;
+}
+@model WebSiteCkEditor.Models.ClientModel
+<main>
+
+    <section class="hero">
+        <div class="container">
+            <div class="main-message">
+                <h1>Silkway-ге</h1>
+                <h3>Қош келдіңіз</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience">
+        <div class="container">
+            <div class="title-heading">
+                <h1>Кафедра Жаңалықтары</h1>
+            </div>
+
+            <div class="activities-grid">
+                @foreach (var item in Model.lst_newsv)
+                {
+                    if (i == 4) {  i = 0;}
+                    <div class="activities-grid-item @mas[i]">
+                        <h1>@item.Title</h1>
+                        <p>
+                            @item.Desc
+                        </p>
+                        <a href="/home/news/@item.Id" class="btn-news">Толығырақ...</a>
+                    </div>
+                    i++;
+                }
+
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonial">
+                <div class="testimonial-text-box">
+
+                    <i class="icon ion-md-quote"></i>
+                </div>
+                <div class="testimonial-customer">
+                    <img src="~/1.0.0.0/images/profile-pic.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @*<section class="slider">
+        <div class="container">
+
+            <div class="title-heading">
+                <h1>Біздің кафедраның жетістіктері</h1>
+            </div>
+
+            <div class="your">
+                <div class="slide-item">
+                    <img src="~/Scripts/1.0.0.0/images/slider/1.jpg" alt="">
+                </div>
+
+                <div class="slide-item">
+                    <img src="~/Scripts/1.0.0.0/images/slider/2.jpg" alt="">
+                </div>
+
+                <div class="slide-item">
+                    <img src="~/Scripts/1.0.0.0/images/slider/3.jpg" alt="">
+                </div>
+
+                <div class="slide-item">
+                    <img src="~/Scripts/1.0.0.0/images/slider/4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>*@
+</main>

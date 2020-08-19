@@ -1,0 +1,94 @@
+﻿@{
+
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nature Tours | Home</title>
+    <!--Ion Icons-->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
+    <!--Our own stylesheet-->
+    @*<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />*@
+    <link rel="stylesheet" href="~/1.0.0.0/css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="menu-icons open">
+                    <i class="icon ion-md-menu"></i>
+                </div>
+
+                <ul class="nav-list">
+                    <div class="div menu-icons close">
+                        <i class="icon ion-md-close"></i>
+                    </div>
+
+                    <li class="nav-item">
+                        <a href="/" class="nav-link current">Басты бет</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/home/kafedra" class="nav-link">Біздің кафедра</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/home/allnews" class="nav-link">Жаңалықтар</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://swiu.kz/kk" class="nav-link">SWIU</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    @RenderBody()
+
+    <footer>
+        <p>&copy; 2020 Copyright. <a href="/admin/news">SWIU</a>  </p>
+    </footer>
+
+    @*<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>*@
+    <script type="text/javascript" src="~/1.0.0.0/js/scripts.js"></script>
+    @*<script type="text/javascript">
+        $('.your').slick({
+            centerMode: true,
+            centerPadding: '50px',
+            slidesToShow: 3,
+            autoplay: true,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 4,
+                        arrows: false,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    </script>*@
+</body>
+</html>
+
+
